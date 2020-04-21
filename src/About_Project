@@ -1,0 +1,52 @@
+
+     POM ===>
+     I used Page Object Model(POM) pattern in to this project. It makes my project highly maintainable,
+ reducing the code duplication and hiding the inner implementation from tests.
+
+     for implement pom in tests, i create a page object class for each and every page that is being tested.
+
+     For example:  i have Kayak.com home page. if i build a page object for home page, it will provide a method for
+ bookflight, which will accept the user enter their information and take to user to the result page to get flight information.
+
+      bookflightTests will instantiate the home page object and call the bookflight method.
+
+
+PageFactory Class ===> extension to the POM design pattern. it is for initialize the elements of a page class
+without having to use "findElement".
+@FinBy can help us find the element,then inside the functional method i can call the webElement, and perform some actions.
+
+
+      TestClass ---> where actually i write my test to use methods or web element from the home page, i have to just instantiate
+home page, call my method in home page, provide user information which user use that for bookflight.
+
+
+
+          Basic Structure ====>
+
+    Pages
+       HomePage
+    Tests
+       HomePageTests
+    Utils
+       BrowserUtils (contains reusable method which i use in my tests)
+       Configuration_Reader
+       Driver (singleton class )
+       TestBase (contains before and after method )
+    pom.xml (brain of my project, which contains--> dependensies,build information etc.)
+    Configuration.properties (contains configuration information regarding my project. ex: url, browser, etc.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
